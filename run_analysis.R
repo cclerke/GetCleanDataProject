@@ -36,6 +36,6 @@ run_analysis <- function() {
   combined_data
 }
 
-get_dataset_averages <- function(data) {
-  
+get_dataset_averages <- function(x) {
+  x %>% group_by(SubjectID, Activity) %>% summarize_all(mean)
 }
